@@ -10,7 +10,15 @@ const route = require('./routes');
 const passport = require('passport');
 require('dotenv').config();
 require('./config/passport')
+<<<<<<< HEAD
+<<<<<<< HEAD
+const Handlebars = require('handlebars');
+=======
 
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 
 
 // Middleware
@@ -23,8 +31,22 @@ app.use(express.json());
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
+<<<<<<< HEAD
+<<<<<<< HEAD
+    resave: false,
+    saveUninitialized: false,
+    cookie: { 
+        secure: false, // chỉ cần true khi sử dụng HTTPS
+        maxAge: 24 * 60 * 60 * 1000 // thời gian sống của session, ở đây là 1 ngày
+    }
+=======
     saveUninitialized: true,
     cookie: { maxAge: 60000 }
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 }));
 // Đăng ký helper Handlebars
 // Handlebars.registerHelper('eq', function (a, b) {
@@ -60,7 +82,31 @@ app.engine(
     'hbs',
     engine({
         extname: '.hbs',
+<<<<<<< HEAD
+<<<<<<< HEAD
+        helpers: {
+            sum: (index, currentPage) => {
+                // Calculate the index based on the current page
+                return (currentPage - 1) * 10 + index + 1;
+            },
+            renderStars: function(diem_danh_gia) {
+                let stars = '';
+                for (let i = 1; i <= 5; i++) {
+                    if (i <= diem_danh_gia) {
+                        stars += '<i class="fa-solid fa-star"></i>';
+                    } else {
+                        stars += '<i class="fa-regular fa-star"></i>';
+                    }
+                }
+                return new Handlebars.SafeString(stars);
+            }
+        },
+=======
         helpers: {},
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+        helpers: {},
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
     }),
 );
 app.set('view engine', 'hbs');

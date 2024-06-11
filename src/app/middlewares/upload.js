@@ -11,6 +11,15 @@ const storage = multer.diskStorage({
   }
 });
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 const upload = multer({ storage: storage });
 
 module.exports = upload;
