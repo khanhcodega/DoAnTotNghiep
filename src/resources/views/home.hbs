@@ -1,8 +1,8 @@
 {{>slider}}
 <div id="" class="home d-flex jc-center">
 
-    <section class="row mt-32 content-news">
-        <div class="container">
+    {{!-- <section class="row mt-32 content-news">
+        <div class="container"> --}}
             {{!-- <div class="d-flex jc-between mt-16  ">
                 <div class="d-flex ai-center">
                     <div class="btn active">
@@ -18,7 +18,7 @@
                 <a class="pd--8-12 btn ">Xem thêm <i class="fa-solid fa-arrow-right"></i></a>
 
             </div> --}}
-            <div class="d-flex ">
+            {{!-- <div class="d-flex ">
                 <div class="col-75 pd-h-12">
                     <div class="d-flex news-hot">
 
@@ -94,7 +94,7 @@
 
                 </div>
             </div>
-    </section>
+    </section> --}}
     <section class="row mt-32  mb-32 content-posts">
         <div class="container">
             <div class="d-flex jc-between mt-16  ">
@@ -106,85 +106,35 @@
 
                 </div>
             </div>
+
             <div class="d-flex list-posts">
+                {{#each data}}
                 <div class="col-25 pd--8-12">
-                    <div class="post-item ">
-                        <img src="/img/house.png" alt="" class="w-full">
+                    <div class="post-item " data-news="{{this.ma_so}}" data-da-like="{{this.da_like}}">
+                        <img src="{{firstFourImages.[0]}}" alt="" class="w-full">
                         <div class="pd--8-12 mt-8">
-                            <h3 class="desc-text text">166m2 đất 2 mặt tiền nhựa thông. Ngay KCN Phước Đông. 880 triệu
+                            <h3 class="desc-text text">{{this.tieu_de}}
                             </h3>
                             <div class="d-flex  ai-center jc-between mt-12">
-                                <span class=" price">430 triệu</span>
-                                <span class=" acreage">125 m<sup>2</sup></span>
+                                <span class=" price">{{this.formattedPrice}} triệu/tháng</span>
+                                <span class=" acreage">{{this.dien_tich}} m²</span>
                             </div>
-                            <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i> Gò Dầu, Tây
-                                Ninh</span>
+                            <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i>
+                                {{this.ten_quan_huyen}} , {{this.ten_thanh_pho}}</span>
                             <div class="d-flex ai-center jc-between mt-12 mb-8">
-                                <span class=" .span-text">Đăng hôm nay</span>
-                                <div class="btn btn-like"><i class="fa-regular fa-heart "></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-25 pd--8-12">
-                    <div class="post-item ">
-                        <img src="/img/house.png" alt="" class="w-full">
-                        <div class="pd--8-12 mt-8">
-                            <h3 class="desc-text text">166m2 đất 2 mặt tiền nhựa thông. Ngay KCN Phước Đông. 880 triệu
-                            </h3>
-                            <div class="d-flex  ai-center jc-between mt-12">
-                                <span class=" price">430 triệu</span>
-                                <span class=" acreage">125 m<sup>2</sup></span>
-                            </div>
-                            <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i> Gò Dầu, Tây
-                                Ninh</span>
-                            <div class="d-flex ai-center jc-between mt-12 mb-8">
-                                <span class=" span-text">Đăng hôm nay</span>
-                                <div class="btn btn-like"><i class="fa-regular fa-heart "></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-25 pd--8-12">
-                    <div class="post-item ">
-                        <img src="/img/house.png" alt="" class="w-full">
-                        <div class="pd--8-12 mt-8">
-                            <h3 class="desc-text text">166m2 đất 2 mặt tiền nhựa thông. Ngay KCN Phước Đông. 880 triệu
-                            </h3>
-                            <div class="d-flex  ai-center jc-between mt-12">
-                                <span class=" price">430 triệu</span>
-                                <span class=" acreage">125 m<sup>2</sup></span>
-                            </div>
-                            <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i> Gò Dầu, Tây
-                                Ninh</span>
-                            <div class="d-flex ai-center jc-between mt-12 mb-8">
-                                <span class=" .span-text">Đăng hôm nay</span>
-                                <div class="btn btn-like"><i class="fa-regular fa-heart "></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-25 pd--8-12">
-                    <div class="post-item ">
-                        <img src="/img/house.png" alt="" class="w-full">
-                        <div class="pd--8-12 mt-8">
-                            <h3 class="desc-text text">166m2 đất 2 mặt tiền nhựa thông. Ngay KCN Phước Đông. 880 triệu
-                            </h3>
-                            <div class="d-flex  ai-center jc-between mt-12">
-                                <span class=" price">430 triệu</span>
-                                <span class=" acreage">125 m<sup>2</sup></span>
-                            </div>
-                            <span class=" location mt-12"><i class="fa-solid fa-location-dot"></i> Gò Dầu, Tây
-                                Ninh</span>
-                            <div class="d-flex ai-center jc-between mt-12 mb-8">
-                                <span class=" .span-text">Đăng hôm nay</span>
-                                <div class="btn btn-like"><i class="fa-regular fa-heart "></i></div>
+                                <span class=" .span-text">{{this.ngay_tao}}</span>
+                                <div class="btn btn-like">{{#if this.da_like}}
+                                    <i class="fa-solid fa-heart"></i>
+                                    {{else}}
+                                    <i class="fa-regular fa-heart"></i>
+                                    {{/if}}</i>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-
+                {{/each}}
             </div>
             <div class="text-center mt-32">
                 <a href="" class="btn btn-sm ">Xem thêm</a>

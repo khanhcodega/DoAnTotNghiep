@@ -21,11 +21,7 @@ class PartialsController {
                 if (err) {
                     return res.status(500).json({ errMessage: 'Server error', statusReq: 500 });
                 }
-
-
-                res.send(JSON.stringify(results));
-
-
+                res.send(JSON.stringify(results[0]));
             }
         );
         // connection.end();
@@ -62,6 +58,23 @@ class PartialsController {
             }
         );
     }
+
+<<<<<<< HEAD
+    logout(req,res){
+        res.redirect('/')
+    }
+
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+    profile(req, res) {
+        if (req.isAuthenticated()) {
+            
+            res.json(req.user); // Trả về thông tin người dùng dưới dạng JSON
+        } else {
+            res.redirect('/login');
+        }
+    };
+    
 }
 
 module.exports = new PartialsController()
