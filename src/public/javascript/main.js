@@ -12,6 +12,7 @@ $(document).ready(function (index) {
     let isBoxInfoHover = false;
     let isUserDropdownHover = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     userLogin()
 
@@ -194,6 +195,111 @@ $(document).ready(function (index) {
     userLogin()
 
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+    $('.form-info #gender').val($('.form-info #gender').attr('value'))
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+    
+            reader.onload = function (e) {
+                $('.form-info label[for="avatar"] img').attr('src', e.target.result);
+            }
+    
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    
+    $("#avatar").change(function(){
+        readURL(this);
+    });
+
+    //update
+    Validator({
+        form: '.form-info',
+        errorSelector: '.form-message',
+        rules: [
+            Validator.isRequired('#fullname', 'Vui lòng nhập tài khoản'),
+            // Validator.isRequired('#password', 'Vui lòng nhập mật khẩu'),
+        ],
+        onSubmit: () => {
+            // const avatar = $('.form-info input[name="avatar"]').val()
+            // const fullname = $('.form-info input[name="fullname"]').val()
+            // const email = $('.form-info input[name="email"]').val()
+            // const phonenumber = parseInt($('.form-info input[name="phonenumber"]').val())
+            // const gender = $('.form-info #gender').val()
+            // const birthday = $('.form-info input[name="birthday"]').val()
+            // const address = $('.form-info input[name="address"]').val()
+
+            // if (avatar == '') {
+            //     avatar = $('.form-info label[for=avatar] img').attr('src')
+            // }
+            // const formData = {
+            //     avatar,
+            //     fullname,
+            //     email,
+            //     phonenumber,
+            //     gender,
+            //     birthday,
+            //     address,
+
+            // };
+
+            const form = document.querySelector('.form-info');
+            const formData = new FormData(form);
+
+            fetch('quan-ly/update-user',
+                {
+                    method: 'PUT',
+                    body: formData
+                }
+            )
+                .then(response => response.json())
+                .then(data => {
+                    if (data) {
+                        localStorage.setItem('user', JSON.stringify(data));
+                        modal.removeClass('open')
+
+                        userLogin()
+                    }
+                    console.log(data)
+                })
+                .catch(error => console.error('Error loading modal:', error));
+
+        }
+    })
+
+    $('.user-info a').click((e) => {
+        e.preventDefault()
+        const { ma_so } = JSON.parse(localStorage.getItem('user'));
+
+        const formData = {
+            ma_so
+        };
+        fetch('quan-ly/set-ma-so', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (response.redirected) {
+                    window.location.href = response.url;
+                }
+            })
+            .catch(error => console.error('Error:', error));
+
+    })
+
+    $('.login-order').click(() => {
+        localStorage.setItem('isLogin', true)
+
+    })
+
+    // console.log(isLogin)
+    userLogin()
+
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
     boxInfo.mouseenter(() => {
         isBoxInfoHover = true
         userDropdown.addClass('active')
@@ -256,6 +362,12 @@ $(document).ready(function (index) {
 
                 localStorage.setItem('user', JSON.stringify(data));
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                // if (data && data.length > 0) {
+                //     modal.removeClass('open')
+
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
                 // if (data && data.length > 0) {
                 //     modal.removeClass('open')
@@ -358,7 +470,11 @@ $(document).ready(function (index) {
 
     $('.btn-logout').click((e) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
         // e.preventDefault()
+=======
+        e.preventDefault()
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
         e.preventDefault()
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
@@ -374,8 +490,11 @@ $(document).ready(function (index) {
         const user = JSON.parse(localStorage.getItem('user'))
         // console.log(user)
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (user) {
 =======
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
         if (user != null) {
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 
@@ -384,9 +503,14 @@ $(document).ready(function (index) {
             $('.user-info a').html(user.ten_nguoi_dung)
             if (user.anh_dai_dien != null) {
 <<<<<<< HEAD
+<<<<<<< HEAD
                 $('.user-avatar img').attr('src','/'+user.anh_dai_dien)
             }
 
+=======
+                $('.user-avatar img').attr('src', user.anh_dai_dien)
+            }
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
                 $('.user-avatar img').attr('src', user.anh_dai_dien)
             }

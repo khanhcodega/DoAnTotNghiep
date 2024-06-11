@@ -146,6 +146,7 @@ a:active {
   max-width: 66.6666%;
   padding: 0 8px;
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 
 .col-30 {
@@ -158,6 +159,8 @@ a:active {
   flex: 0 0 70%;
   max-width: 70%;
   padding: 0 8px;
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 }
@@ -278,10 +281,13 @@ a:active {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #content {
   margin-top: 80px;
 }
 
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 .box-info .user-avatar img {
@@ -315,6 +321,7 @@ a:active {
   background-color: #FFECEB;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 table {
   width: 100%;
@@ -467,6 +474,8 @@ table .btn-delete {
 
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 .form {
   width: 450px;
   padding: 36px 24px;
@@ -476,7 +485,11 @@ table .btn-delete {
   margin: 24px;
   align-self: center;
 <<<<<<< HEAD
+<<<<<<< HEAD
   box-shadow: 0 2px 5px 0 #888888;
+=======
+  box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
   box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
@@ -511,9 +524,12 @@ table .btn-delete {
   flex-direction: column;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .form .form-group option {
   padding: 10px;
 }
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 .form .form-label,
@@ -592,6 +608,7 @@ table .btn-delete {
   border: 1px solid #ccc;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .post-news {
   padding: 12px;
@@ -850,6 +867,10 @@ table .btn-delete {
 .user {
   margin-top: 80px;
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+.user {
+  margin-top: 80px;
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
   position: relative;
   min-height: 650px;
 }
@@ -918,6 +939,7 @@ table .btn-delete {
   border-radius: 50%;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 .user .box-content .col-80 {
   box-shadow: 0 2px 5px rgba(44, 44, 44, 0.4);
   margin: 12px 0;
@@ -974,6 +996,8 @@ table .btn-delete {
 }
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 
 .header {
   position: fixed;
@@ -1006,6 +1030,9 @@ table .btn-delete {
 .header nav .btn-like, .header nav .btn-notify, .header nav .btn-history-like {
 =======
 .header nav .btn-like, .header nav .btn-notify {
+<<<<<<< HEAD
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
   font-size: 20px;
 }

@@ -11,7 +11,11 @@ const passport = require('passport');
 require('dotenv').config();
 require('./config/passport')
 <<<<<<< HEAD
+<<<<<<< HEAD
 const Handlebars = require('handlebars');
+=======
+
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
 
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
@@ -28,12 +32,17 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
 <<<<<<< HEAD
+<<<<<<< HEAD
     resave: false,
     saveUninitialized: false,
     cookie: { 
         secure: false, // chỉ cần true khi sử dụng HTTPS
         maxAge: 24 * 60 * 60 * 1000 // thời gian sống của session, ở đây là 1 ngày
     }
+=======
+    saveUninitialized: true,
+    cookie: { maxAge: 60000 }
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
     saveUninitialized: true,
     cookie: { maxAge: 60000 }
@@ -74,6 +83,7 @@ app.engine(
     engine({
         extname: '.hbs',
 <<<<<<< HEAD
+<<<<<<< HEAD
         helpers: {
             sum: (index, currentPage) => {
                 // Calculate the index based on the current page
@@ -91,6 +101,9 @@ app.engine(
                 return new Handlebars.SafeString(stars);
             }
         },
+=======
+        helpers: {},
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
         helpers: {},
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7

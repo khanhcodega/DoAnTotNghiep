@@ -4,6 +4,10 @@ class UserController {
     index(req, res, next) {
         const ma_so = req.session.ma_so;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        console.log(ma_so)
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
         console.log(ma_so)
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
@@ -16,6 +20,10 @@ class UserController {
                 }
                 const data = results[0];
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+                // console.log(data);
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 =======
                 // console.log(data);
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
@@ -24,6 +32,7 @@ class UserController {
         );
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     storeNews(req, res, next) {
         const ma_so = req.session.ma_so;
@@ -200,6 +209,8 @@ class UserController {
 
 =======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
     update(req, res, next) {
         const ma_so = req.session.ma_so;
         const { fullname, email, phonenumber, gender, birthday, address, old_avatar } = req.body
@@ -232,13 +243,19 @@ class UserController {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
     setMaSo(req, res, next) {
         const { ma_so } = req.body;
         req.session.ma_so = ma_so;
         res.redirect('/quan-ly');
     }
+<<<<<<< HEAD
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
 }
 

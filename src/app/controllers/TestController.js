@@ -3,9 +3,12 @@ const connection = require('../../config/db/index')
 class TestController {
     index(req, res, next) {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
         res.render('rentHouse');
 =======
+=======
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
         const ma_so = req.session.ma_so;
         console.log(ma_so)
         connection.query(
@@ -46,6 +49,9 @@ class TestController {
         const { ma_so } = req.body;
         req.session.ma_so = ma_so;
         res.redirect('/test');
+<<<<<<< HEAD
+>>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
+=======
 >>>>>>> a503d10ea67dc4a8a4eb8e6a56dce9e6c0d636b7
     }
 }
