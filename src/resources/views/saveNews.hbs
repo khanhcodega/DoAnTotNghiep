@@ -1,0 +1,67 @@
+<div class="user d-flex jc-center">
+    {{>navbarUser}}
+
+    <div class="box-content container d-flex jc-center ">
+        <div class="col-80">
+            <div class="mt-16">
+                {{!-- <h2> Tin đăng đã xem </h2> --}}
+                <h3 class="title-text   mt-16">Danh sách tin tức xem gần đây</h3>
+
+                <div class="mt-16">
+                    {{#each data}}
+                    <a class="item d-flex item-content" href="/nha-cho-thue/{{this.ma_so_tin_tuc}} "
+                       data-news="{{this.ma_so_tin_tuc}}" data-da-like="{{this.da_like}}">
+                        <img src="/{{images.[0]}}" alt="">
+                        <div class="item-container ">
+                            <span class="span-text dark-text">{{this.tieu_de}}</span>
+                            <span class="span-text gray-text">{{this.dien_tich}} m²- {{this.floor}} Tầng-
+                                {{this.bedroom}}PN</span>
+                            <span class="span-text red-text bolder">{{this.formattedPrice}} triệu/tháng</span>
+                            <span class="span-text gray-text">{{this.ten_nguoi_dung}} · {{this.ngay_tao}} · Quận
+                                {{this.ten_quan_huyen}}</span>
+                        </div>
+                        <div class="action d-flex ">
+                            <div class="btn btn-chat btn  mr-8">
+                                <i class="fa-regular fa-message"></i>
+                                <span>Chat</span>
+                            </div>
+                            <div class="btn btn-like  ">
+                                {{#if this.da_like}}
+                                <i class="fa-solid fa-heart"></i>
+                                {{else}}
+                                <i class="fa-regular fa-heart"></i>
+                                {{/if}}
+                            </div>
+                        </div>
+                    </a>
+                    {{/each}}
+
+                    <div class="d-flex jc-center mt-24">
+
+                        <ul class="pagination">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    document.querySelectorAll('.btn').forEach(btn => {
+        btn.addEventListener('click', function (event) {
+            event.stopPropagation();  // Ngăn chặn sự kiện click từ nút lan ra ngoài
+            event.preventDefault();  // Ngăn chặn hành vi mặc định của thẻ a cha
+            // Xử lý logic click của nút ở đây, ví dụ mở chat hoặc like
+            console.log('Button clicked');
+        });
+    });
+
+    document.querySelectorAll('.item').forEach(item => {
+        item.addEventListener('click', function (event) {
+            if (!event.target.closest('.btn')) {  // Chỉ chuyển trang nếu click không phải vào nút
+                window.location.href = this.href;
+            }
+        });
+    });
+</script>
